@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible " content="ie=edge">
+    <title>Beer Store</title>
+<!--    <script src="https://unpkg.com/vue"></script>-->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <link rel="stylesheet" href="beerstore.css">
+</head>
+
+
+<body>
+<!-----header---->
+   
+   
+   
+    <div id="app" class="list">
+    
+    <header>
+       <h2>Beer in mind</h2>
+       <input v-model="valueToSearch" type="text" id="search" placeholder="check your beer!">
+       <button class="click" type="button">Click</button>
+    </header>
+     
+    <div v-for="(beer, $key) in validBeers">
+    <div class="row">
+    <div class="col-lg-12">
+<!--    <div class="col-4-lg">-->
+    <div class="card" style="width: 12rem" >
+    
+      <div class="front">
+                    <img :src="beer.image_url" height="150" width="100">
+          
+                  
+<!--               <img class="img">{{beer.image_url}}-->
+                
+    <div class="card-body">
+    
+      <p class="name">{{beer.name}}</p>
+       
+        <p class="description">{{beer.food_pairing}}</p>
+
+        <a class="btn btn-primary" data-toggle="collapse" :href='"#collapseExample" + $key' role="button" aria-expanded="false" aria-controls="collapseExample">
+    See more!
+  </a>
+        
+
+           <div class="collapse" :id='"collapseExample" + $key'>
+            <p>{{beer.description}}</p>
+        </div>
+        
+    </div>
+    </div>
+    </div>
+    <!-----------close card------>
+        </div>
+        </div>
+        </div>
+        </div>
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     <!--    bootstrap and jquery-->
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--    isotope-->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <!--    fancybox-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <!--    mu js-->
+   
+        
+<!--    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--    isotope-->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <!--    fancybox-->
+
+    
+     <script src="https://unpkg.com/vue"></script>
+    <script src="beerstore.js"></script>
+</body>
+</html>
